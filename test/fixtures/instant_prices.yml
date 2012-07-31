@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  stock_id: 1
+  buy: 1.5
+  sell: 1.5
+  price_type: MyString
+
+two:
+  stock_id: 1
+  buy: 1.5
+  sell: 1.5
+  price_type: MyString

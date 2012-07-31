@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  stock_id: 1
+  buy_pre: 1.5
+  buy_open: 1.5
+  buy_high: 1.5
+  buy_low: 1.5
+  buy_close: 1.5
+  sell_pre: 1.5
+  sell_open: 1.5
+  sell_high: 1.5
+  sell_low: 1.5
+  sell_close: 1.5
+  week_of_year: 1
+  month_of_year: 1
+  remark: MyString
+
+two:
+  stock_id: 1
+  buy_pre: 1.5
+  buy_open: 1.5
+  buy_high: 1.5
+  buy_low: 1.5
+  buy_close: 1.5
+  sell_pre: 1.5
+  sell_open: 1.5
+  sell_high: 1.5
+  sell_low: 1.5
+  sell_close: 1.5
+  week_of_year: 1
+  month_of_year: 1
+  remark: MyString

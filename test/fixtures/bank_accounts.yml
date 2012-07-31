@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  bank_name: MyString
+  bank_code: MyString
+  bank_branch: MyString
+  account: MyString
+  account_name: MyString
+  is_default: false
+  is_confirm: false
+  remark: MyString
+
+two:
+  bank_name: MyString
+  bank_code: MyString
+  bank_branch: MyString
+  account: MyString
+  account_name: MyString
+  is_default: false
+  is_confirm: false
+  remark: MyString

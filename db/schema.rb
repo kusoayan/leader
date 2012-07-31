@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120730083148) do
+ActiveRecord::Schema.define(:version => 20120731154830) do
 
   create_table "addresses", :force => true do |t|
     t.string   "city"
@@ -28,9 +28,82 @@ ActiveRecord::Schema.define(:version => 20120730083148) do
     t.datetime "updated_at",        :null => false
   end
 
+  create_table "alphabet_numbers", :force => true do |t|
+    t.string   "alphabet"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "bank_accounts", :force => true do |t|
+    t.string   "bank_name"
+    t.string   "bank_code"
+    t.string   "bank_branch"
+    t.string   "account"
+    t.string   "account_name"
+    t.boolean  "is_default"
+    t.boolean  "is_confirm"
+    t.string   "remark"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.boolean  "show"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "closing_prices", :force => true do |t|
+    t.integer  "stock_id"
+    t.float    "buy_pre"
+    t.float    "buy_open"
+    t.float    "buy_high"
+    t.float    "buy_low"
+    t.float    "buy_close"
+    t.float    "sell_pre"
+    t.float    "sell_open"
+    t.float    "sell_high"
+    t.float    "sell_low"
+    t.float    "sell_close"
+    t.integer  "week_of_year"
+    t.integer  "month_of_year"
+    t.string   "remark"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "emails", :force => true do |t|
+    t.string   "email_type"
+    t.string   "email"
+    t.string   "status"
+    t.boolean  "is_confirm"
+    t.boolean  "is_default"
+    t.string   "remark"
+    t.integer  "email_user_id"
+    t.string   "email_user_type"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "epaper_subscribes", :force => true do |t|
+    t.string   "subscribe_type"
+    t.integer  "email_id"
+    t.string   "email_account"
+    t.string   "category"
+    t.boolean  "send_status"
+    t.boolean  "is_confirm"
+    t.integer  "send_count"
+    t.integer  "fail_count"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "instant_prices", :force => true do |t|
+    t.integer  "stock_id"
+    t.float    "buy"
+    t.float    "sell"
+    t.string   "price_type"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -95,6 +168,16 @@ ActiveRecord::Schema.define(:version => 20120730083148) do
     t.integer  "stock_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "webpages", :force => true do |t|
+    t.string   "title"
+    t.string   "url"
+    t.string   "remark"
+    t.integer  "webpage_user_id"
+    t.string   "webpage_user_type"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
   end
 
 end

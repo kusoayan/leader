@@ -7,8 +7,8 @@
   <%= f.input :product %>
   <%= f.input :manage_team %>
   <%= f.input :main_shareowner %>
-  <%= f.input :first_alphabet %>
-  <%= f.input :second_alphabet %>
+  <%= f.input :first_alphabet, :collection => alphabet_list, :selected => stock.first_alphabet %>
+  <%= f.input :second_alphabet, :collection => alphabet_list, :selected => stock.second_alphabet %>
   <%= f.input :emerging_stock_number %>
   <%= f.input :epaper %>
   <%= f.input :remark %>
@@ -30,7 +30,7 @@
   <hr />
   <%= f.simple_fields_for :addresses do |addresses| %>
     <h3>
-      Address
+      地址
     </h3>
     <%= addresses.input :city %> 
     <%= addresses.input :township %> 
@@ -40,5 +40,34 @@
     <%= addresses.input :remark %> 
   <% end %>
   <hr />
+  <%= f.simple_fields_for :phones do |phones| %>
+    <h3>
+      電話
+    </h3>
+    <%= phones.input :phone_type %> 
+    <%= phones.input :area_number %> 
+    <%= phones.input :number %> 
+    <%= phones.input :ext %> 
+    <%= phones.input :remark %> 
+  <% end %>
+  <hr />
+  <%= f.simple_fields_for :emails do |emails| %>
+    <h3>
+      電子信箱
+    </h3>
+    <%= emails.input :email_type %> 
+    <%= emails.input :email %> 
+    <%= emails.input :status %> 
+    <%= emails.input :remark %> 
+  <% end %>
+  <hr />
+  <%= f.simple_fields_for :webpages do |webpages| %>
+    <h3>
+      網頁
+    </h3>
+    <%= webpages.input :title %> 
+    <%= webpages.input :url %> 
+    <%= webpages.input :remark %> 
+  <% end %>
   <%= f.button :submit %>
 <% end %>

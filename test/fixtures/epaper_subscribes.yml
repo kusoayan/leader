@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  subscribe_type: MyString
+  email_id: 1
+  email_account: MyString
+  category: MyString
+  send_status: false
+  is_confirm: false
+  send_count: 1
+  fail_count: 1
+
+two:
+  subscribe_type: MyString
+  email_id: 1
+  email_account: MyString
+  category: MyString
+  send_status: false
+  is_confirm: false
+  send_count: 1
+  fail_count: 1
