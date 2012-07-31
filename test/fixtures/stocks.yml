@@ -1,0 +1,63 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  company_number: MyString
+  short_name: MyString
+  full_name: MyString
+  form_date: 2012-07-30
+  capitalization: 1.5
+  counseling_dealer_id: 
+  stock_affair_id: 
+  product: MyString
+  manage_team: MyString
+  main_shareowner: MyString
+  first_alphabet: 
+  second_alphabet: 
+  emerging_stock_number: MyString
+  epaper: false
+  remark: MyString
+  vat_number: MyString
+  issue_type: MyString
+  main_business: MyString
+  last_approved_date: 2012-07-30
+  chairman: MyString
+  general_manager: MyString
+  kcc888_code: MyString
+  emerging_date: 2012-07-30
+  public_offer_date: 2012-07-30
+  counseling_date: 2012-07-30
+  listing_date: 2012-07-30
+  otc_date: 2012-07-30
+  stock_type: MyString
+  accountant: MyString
+
+two:
+  company_number: MyString
+  short_name: MyString
+  full_name: MyString
+  form_date: 2012-07-30
+  capitalization: 1.5
+  counseling_dealer_id: 
+  stock_affair_id: 
+  product: MyString
+  manage_team: MyString
+  main_shareowner: MyString
+  first_alphabet: 
+  second_alphabet: 
+  emerging_stock_number: MyString
+  epaper: false
+  remark: MyString
+  vat_number: MyString
+  issue_type: MyString
+  main_business: MyString
+  last_approved_date: 2012-07-30
+  chairman: MyString
+  general_manager: MyString
+  kcc888_code: MyString
+  emerging_date: 2012-07-30
+  public_offer_date: 2012-07-30
+  counseling_date: 2012-07-30
+  listing_date: 2012-07-30
+  otc_date: 2012-07-30
+  stock_type: MyString
+  accountant: MyString

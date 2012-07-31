@@ -1,0 +1,44 @@
+<%= simple_form_for stock do |f| %>
+  <%= f.input :company_number %>
+  <%= f.input :short_name %>
+  <%= f.input :full_name %>
+  <%= f.input :form_date %>
+  <%= f.input :capitalization %>
+  <%= f.input :product %>
+  <%= f.input :manage_team %>
+  <%= f.input :main_shareowner %>
+  <%= f.input :first_alphabet %>
+  <%= f.input :second_alphabet %>
+  <%= f.input :emerging_stock_number %>
+  <%= f.input :epaper %>
+  <%= f.input :remark %>
+  <%= f.input :vat_number %>
+  <%= f.input :issue_type %>
+  <%= f.input :main_business %>
+  <%= f.input :last_approved_date %>
+  <%= f.input :chairman %>
+  <%= f.input :general_manager %>
+  <%= f.input :kcc888_code %>
+  <%= f.input :emerging_date %>
+  <%= f.input :public_offer_date %>
+  <%= f.input :counseling_date %>
+  <%= f.input :listing_date %>
+  <%= f.input :otc_date %>
+  <%= f.input :stock_type %>
+  <%= f.input :accountant %>
+  <%= f.association :categories %>
+  <hr />
+  <%= f.simple_fields_for :addresses do |addresses| %>
+    <h3>
+      Address
+    </h3>
+    <%= addresses.input :city %> 
+    <%= addresses.input :township %> 
+    <%= addresses.input :postalcode %> 
+    <%= addresses.input :address %> 
+    <%= addresses.input :address_type %> 
+    <%= addresses.input :remark %> 
+  <% end %>
+  <hr />
+  <%= f.button :submit %>
+<% end %>

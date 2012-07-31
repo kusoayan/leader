@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  phone_type: MyString
+  area_number: MyString
+  number: MyString
+  ext: MyString
+  is_default: false
+  is_confirm: false
+  remark: MyString
+
+two:
+  phone_type: MyString
+  area_number: MyString
+  number: MyString
+  ext: MyString
+  is_default: false
+  is_confirm: false
+  remark: MyString

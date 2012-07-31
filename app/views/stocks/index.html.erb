@@ -1,0 +1,7 @@
+<% @stocks.each do |stock| %>
+  <%= stock.full_name %>
+  <%= link_to 'Show', stock_path(stock) %>
+  <%= link_to 'Edit', edit_stock_path(stock) %>
+  <%= button_to 'Delete', stock_path(stock), :method => :delete %>
+<% end %>
+<%= link_to 'New Stock', new_stock_path() %>
