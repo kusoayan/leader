@@ -3,6 +3,8 @@ Leader::Application.routes.draw do
 
   resources :stocks
 
+  match 'data' => 'data#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

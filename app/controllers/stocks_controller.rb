@@ -4,7 +4,7 @@ class StocksController < ApplicationController
   before_filter :prepare_alphabet_list, :only => [:new, :edit]
 
   def index
-    @stocks = Stock.all
+    @stocks = Stock.page(params[:page]).per(10)
   end
 
   def new
