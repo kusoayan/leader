@@ -1,7 +1,12 @@
 Leader::Application.routes.draw do
   root :to => 'stocks#index'
 
-  resources :stocks
+  resources :stocks do
+    collection do
+      #get 'search/(:query)', :action => 'search'
+      get :search
+    end
+  end
 
   match 'data' => 'data#index'
 

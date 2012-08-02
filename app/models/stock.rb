@@ -1,9 +1,5 @@
 class Stock < ActiveRecord::Base
 
-  # Search
-  include PgSearch
-  multisearchable :against => [:short_name, :full_name]
-
   attr_accessible :accountant, :capitalization, :chairman, :company_number, :counseling_date, :emerging_date, :emerging_stock_number, :epaper, :first_alphabet, :form_date, :full_name, :general_manager, :issue_type, :kcc888_code, :last_approved_date, :listing_date, :main_business, :main_shareowner, :manage_team, :otc_date, :product, :public_offer_date, :remark, :second_alphabet, :short_name, :stock_type, :vat_number,
     :addresses_attributes, :phones_attributes, :webpages_attributes, :emails_attributes, :category_ids
 

@@ -1,8 +1,40 @@
-<% @stocks.each do |stock| %>
-  <%= stock.full_name %>
-  <%= link_to 'Show', stock_path(stock) %>
-  <%= link_to 'Edit', edit_stock_path(stock) %>
-  <%= button_to 'Delete', stock_path(stock), :method => :delete %>
+<%= form_tag stocks_path, :method => 'get', :id => 'stocks_search', 'data-type' => 'json' do %>
+  <p>
+    <%= text_field_tag :search %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
 <% end %>
-<%= link_to 'New Stock', new_stock_path() %>
-<%= paginate @stocks %>
+<div id="stocks">
+
+  <table class="zebra-striped" id="stocks_content">
+    <thead>
+      <tr>
+        <th>Short Name</th>
+        <th>Full Name</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @stocks.each do |stock| %>
+      <tr>
+        <td>
+          <%= stock.short_name %>
+        </td>
+        <td>
+          <%= stock.full_name %>
+        </td>
+        <td>
+          <%= link_to 'Show', stock_path(stock) %>
+          <%= link_to 'Edit', edit_stock_path(stock) %>
+          <%= button_to 'Delete', stock_path(stock), :method => :delete %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'New Stock', new_stock_path() %>
+  <%= paginate @stocks, :params => {'search' => params[:search]} %>
+  <%= link_to_next_page @stocks, :params => {'search' => params[:search]} %>
+</div>
+
+<% @page_specific_scripts_in = "stocks_index" %>

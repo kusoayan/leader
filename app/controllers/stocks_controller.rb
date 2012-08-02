@@ -1,10 +1,15 @@
+# encoding: utf-8
 class StocksController < ApplicationController
 
   before_filter :find_stock, :only => [:show, :edit, :update, :destroy]
   before_filter :prepare_alphabet_list, :only => [:new, :edit]
 
   def index
-    @stocks = Stock.page(params[:page]).per(10)
+    @stocks = Stock.where(["short_name LIKE ? or full_name LIKE ?", "%#{params[:search]}%", "%#{params[:search]}%"]).page(params[:page]).per(10)
+    respond_to do |format|
+      format.html
+      format.json { render :json => @stocks.to_json }
+    end
   end
 
   def new
@@ -39,6 +44,9 @@ class StocksController < ApplicationController
     redirect_to stock_path(@stock)
   end
 
+  def search
+    @stocks = Stock.where(["short_name LIKE ? or full_name LIKE ?", "%#{params[:query]}%", "%#{params[:query]}%"]).page(params[:page]).per(5)
+  end
 
 
   protected
