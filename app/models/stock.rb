@@ -21,5 +21,8 @@ class Stock < ActiveRecord::Base
   has_many :stock_categoryships
   has_many :categories, :through => :stock_categoryships
 
+  def self.search(query)
+    where(["short_name LIKE ? or full_name LIKE ?", "%#{query}%", "%#{query}%"])
+  end
 
 end

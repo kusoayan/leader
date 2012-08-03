@@ -1,16 +1,17 @@
 Leader::Application.routes.draw do
+
   root :to => 'stocks#index'
 
   resources :stocks do
-    collection do
-      #get 'search/(:query)', :action => 'search'
-      get :search
-    end
+    get 'page/:page(/query/:query)', :action => :index, :on => :collection
   end
 
-  resources :categories
+  resources :categories do
+    get 'page/:page', :action => :index, :on => :collection
+  end
 
   match 'data' => 'data#index'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

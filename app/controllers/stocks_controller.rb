@@ -5,7 +5,17 @@ class StocksController < ApplicationController
   before_filter :prepare_alphabet_list, :only => [:new, :edit]
 
   def index
-    @stocks = Stock.where(["short_name LIKE ? or full_name LIKE ?", "%#{params[:search]}%", "%#{params[:search]}%"]).page(params[:page]).per(10)
+    @categories = Category.all
+    @stocks = Stock.scoped
+    if params[:query]
+      @stocks = @stocks.search(params[:query])
+    end
+
+    if params[:category]
+      @stocks = @stocks.joins(:categories).where(["categories.id = ?", params[:category]])     
+    end
+
+    @stocks = @stocks.page(params[:page]).per(10)
     respond_to do |format|
       format.html
       format.json { render :json => @stocks.to_json }
@@ -43,11 +53,6 @@ class StocksController < ApplicationController
 
     redirect_to stock_path(@stock)
   end
-
-  def search
-    @stocks = Stock.where(["short_name LIKE ? or full_name LIKE ?", "%#{params[:query]}%", "%#{params[:query]}%"]).page(params[:page]).per(5)
-  end
-
 
   protected
 
