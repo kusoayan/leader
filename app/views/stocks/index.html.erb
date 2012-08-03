@@ -35,5 +35,3 @@
   <%= link_to 'New Stock', new_stock_path() %>
   <%= paginate @stocks, :params => {'search' => params[:search]} %>
 </div>
-
-<% @page_specific_scripts_in = "stocks_index" %>
