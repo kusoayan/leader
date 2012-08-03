@@ -1,4 +1,4 @@
-<%= form_tag stocks_path, :method => 'get', :id => 'stocks_search', 'data-type' => 'json' do %>
+<%= form_tag stocks_path, :method => 'get', :id => 'stocks_search' do %>
   <p>
     <%= text_field_tag :search %>
     <%= submit_tag "Search", :name => nil %>
@@ -34,7 +34,6 @@
   </table>
   <%= link_to 'New Stock', new_stock_path() %>
   <%= paginate @stocks, :params => {'search' => params[:search]} %>
-  <%= link_to_next_page @stocks, :params => {'search' => params[:search]} %>
 </div>
 
 <% @page_specific_scripts_in = "stocks_index" %>

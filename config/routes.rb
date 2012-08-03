@@ -8,6 +8,8 @@ Leader::Application.routes.draw do
     end
   end
 
+  resources :categories
+
   match 'data' => 'data#index'
 
   # The priority is based upon order of creation:

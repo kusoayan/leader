@@ -1,0 +1,15 @@
+<p>
+  <strong>
+    分類名稱:
+  </strong>
+  <%= @category.name %>
+</p>
+<p>
+  <strong>
+    是否顯示:
+  </strong>
+  <%= @category.show? %>
+</p>
+
+<%= link_to '編輯', edit_category_path(@category) %>
+<%= button_to '刪除', category_path(@category), :method => :delete %>

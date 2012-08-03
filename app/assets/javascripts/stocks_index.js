@@ -10,6 +10,7 @@ $(function() {
       })
       $("#stocks_content").html(tbl_body);
       $("#paginator").html('<%= escape_javascript(paginate(@users).to_s) %>');
-      //$("#stocks").html("<%= escape_javascript(render(:partial => 'list')) %>");
+      $("#stocks").html('<%= escape_javascript(render 'edit') %>');
+      alert('hah');
     });
 });
