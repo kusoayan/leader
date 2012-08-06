@@ -16,9 +16,10 @@ class StocksController < ApplicationController
     end
 
     @stocks = @stocks.page(params[:page]).per(10)
+    @stocksssss = @stocks
     respond_to do |format|
       format.html
-      format.json { render :json => @stocks.to_json }
+      format.js
     end
   end
 

@@ -1,51 +1,15 @@
-<%= form_tag stocks_path, :method => 'get', :id => 'stocks_search' do %>
+<%= form_tag stocks_path, :method => 'get', :id => 'search', :remote => true do %>
   <p>
     <%= text_field_tag :query %>
     <%= submit_tag "簡稱/全名查詢", :name => nil %>
   </p>
-<% end %>
-<%= form_tag stocks_path, :method => 'get', :id => 'stocks_alphabet' do %>
   <p>
     <% @categories.each do |category| %>
       <%= radio_button_tag 'category', category.id %>
       <%= category.name %>
     <% end %>
     <%= submit_tag "分類查詢", :name => nil %>
-  </p>
 <% end %>
 <div id="stocks">
-  <table class="zebra-striped" id="stocks_content">
-    <thead>
-      <tr>
-        <th>Short Name</th>
-        <th>Full Name</th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @stocks.each do |stock| %>
-      <tr>
-        <td>
-          <%= stock.short_name %>
-        </td>
-        <td>
-          <%= stock.full_name %>
-        </td>
-        <td>
-          <%= link_to 'Show', stock_path(stock) %>
-        </td>
-        <td>
-          <%= link_to 'Edit', edit_stock_path(stock) %>
-        </td>
-        <td>
-          <%= button_to 'Delete', stock_path(stock), :method => :delete %>
-        </td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <%= link_to 'New Stock', new_stock_path() %>
-  <%= paginate @stocks, :params => {'query' => params[:query], 'category' => params[:category]} %>
+      <%= render :partial => 'list', :locals => { :stocks => @stocks } %>
 </div>

@@ -10,9 +10,6 @@ gem 'mysql2'
 # pagination
 gem 'kaminari'
 
-# full text search
-gem 'pg_search'
-
 # dump db
 gem 'yaml_db'
 

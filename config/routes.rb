@@ -2,13 +2,9 @@ Leader::Application.routes.draw do
 
   root :to => 'stocks#index'
 
-  resources :stocks do
-    get 'page/:page(/query/:query)', :action => :index, :on => :collection
-  end
+  resources :stocks
 
-  resources :categories do
-    get 'page/:page', :action => :index, :on => :collection
-  end
+  resources :categories
 
   match 'data' => 'data#index'
 
